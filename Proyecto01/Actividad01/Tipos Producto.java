@@ -8,6 +8,4 @@ public enum Tipos Producto {
 
 	ENLATADO;
 
-	private int attribute7;
-
 }
