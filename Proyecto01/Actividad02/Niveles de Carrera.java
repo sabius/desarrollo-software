@@ -4,10 +4,4 @@ public enum Niveles de Carrera {
 
 	POSTGRADO;
 
-	private int attribute11;
-
-	private int attribute12;
-
-	private int attribute13;
-
 }
