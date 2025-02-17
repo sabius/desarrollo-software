@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package services;
 
 
@@ -18,7 +14,7 @@ import java.util.Optional;
  * @author gonzalodaniel
  */
 public class StandService {
-    private List<Stand> stands;
+    private final List<Stand> stands;
     
     public StandService() {
         this.stands = new ArrayList<>();
@@ -39,7 +35,7 @@ public class StandService {
         return disponibles;
     }
     
-    public void asignarStand(int numero, Empresa empresa) {
+    public void asignarStand(int numero, String empresa) {
         for (Stand stand : stands) {
             if(stand.getNumero() == numero && !stand.getOcupado()) {
                 stand.setOcupado(true);

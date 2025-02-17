@@ -1,9 +1,5 @@
 package enums;
 
-/**
- *
- * @author gonzalodaniel
- */
 public enum Tamanos {
   PEQUENO("PEQUENO"),
   MEDIANO("MEDIANO"),
