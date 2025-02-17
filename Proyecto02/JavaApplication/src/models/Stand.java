@@ -10,7 +10,7 @@ public class Stand {
   private Ubicaciones ubicacion;
   private Tamanos tamano;
   private boolean ocupado;
-  private Optional<Empresa> empresa;
+  private Optional<String> empresa;
 
   public Stand(int numero, Ubicaciones ubicacion, Tamanos tamano) {
     this.numero = numero;
@@ -49,10 +49,10 @@ public class Stand {
     this.ocupado = ocupado;
   }
 
-  public Optional<Empresa> getEmpresa() {
+  public Optional<String> getEmpresa() {
     return this.empresa;
   }
-  public void setEmpresa(Optional<Empresa> empresa) {
+  public void setEmpresa(Optional<String> empresa) {
       this.empresa = empresa;
   }
 }
