@@ -9,7 +9,7 @@ import java.util.List;
  
  /**
   *
-  * @author Gonzalo Daniel
+  * @author Agregar autores acá
   */
  public class Feriaempresarial {
   public static void main(String[] args) {
@@ -18,7 +18,7 @@ import java.util.List;
     
     // Registrar empresas
     System.out.println("\nRegistrando 2 empresas");
-    Empresa empresa1 = empresaService.registrarEmpresa("Tech Corp", Sectores.TECNOLOGIA, "test@techcorp.com");
+    empresaService.registrarEmpresa("Tech Corp", Sectores.TECNOLOGIA, "test@techcorp.com");
     empresaService.registrarEmpresa("Umbrella", Sectores.SALUD, "t-virus@umbrella.com");
     
     
