@@ -1,61 +1,35 @@
+// Imports para codificar UTF-8 y ver tildes
+import java.io.PrintStream;
+import java.nio.charset.StandardCharsets;
 
 import services.EmpresaService;
 import services.StandService;
+import services.VisitanteService;
+import services.ReporteService;
 import enums.Sectores;
-import models.Empresa;
-import models.Stand;
-
-import java.util.List;
-
-/**
- *
- * @author Agregar autores acá
- */
 public class Feriaempresarial {
   public static void main(String[] args) {
+    // Se forza la codificación a UTF-8
+    try {
+      System.setOut(new PrintStream(System.out, true, StandardCharsets.UTF_8.name()));
+    } catch (Exception e) {
+      System.err.println("No se pudo establecer la codificación UTF-8");
+    }
+
     EmpresaService empresaService = new EmpresaService();
     StandService standService = new StandService();
+    VisitanteService visitanteService = new VisitanteService();
 
-    // Registrar empresas
-    System.out.println("\nRegistrando 2 empresas");
+    System.out.println("\nRegistrando empresas");
     empresaService.registrarEmpresa("Tech Corp", Sectores.TECNOLOGIA, "test@techcorp.com");
     empresaService.registrarEmpresa("Umbrella", Sectores.SALUD, "t-virus@umbrella.com");
     empresaService.registrarEmpresa("Sactrom", Sectores.TECNOLOGIA, "Sactr@sactrom.com");
 
-    // Listar empresas registradas
-    System.out.println("\nEmpresas registradas:");
-    List<Empresa> empresas = empresaService.listarEmpresas();
-    for (Empresa empresa : empresas) {
-      System.out.println("- " + empresa.getNombre() + " | Sector: " + empresa.getSector().getDescripcion()
-          + " | Email: " + empresa.getEmail());
-    }
+    System.out.println("\nRegistrando visitantes");
+    visitanteService.registrarVisitante("Bruce Wayne", 123456, "bruce@wayne.com");
+    visitanteService.registrarVisitante("Barry Allen", 987456, "barry@allen.com");
 
-    // Eliminar una empresa
-    empresaService.eliminarEmpresa("Tech Corp");
-
-    // Listar empresas después de la eliminación
-    System.out.println("\nEmpresas después de eliminar Tech Corp:");
-    empresas = empresaService.listarEmpresas();
-    for (Empresa empresa : empresas) {
-      System.out.println("- " + empresa.getNombre() + " | Sector: " + empresa.getSector().getDescripcion()
-          + " | Email: " + empresa.getEmail());
-    }
-
-    // Listar stands disponibles
-    System.out.println("\nStands disponibles:");
-    for (Stand stand : standService.listarStandsDisponibles()) {
-      System.out.println("- Stand " + stand.getNumero() + " | Ubicación: " + stand.getUbicacion().getDescripcion()
-          + " | Tamaño: " + stand.getTamano());
-    }
-
-    // Asignar un stand a una empresa
-    standService.asignarStand(1, "Tech Corp");
-
-    // Listar stands después de asignación
-    System.out.println("\nStands después de asignación:");
-    for (Stand stand : standService.listarStandsDisponibles()) {
-      System.out.println("- Stand " + stand.getNumero() + " | Ubicación: " + stand.getUbicacion().getDescripcion()
-          + " | Tamaño: " + stand.getTamano());
-    }
+    // Usar el nuevo servicio de reportes
+    ReporteService.generarReporteFeria(empresaService, standService, visitanteService);
   }
 }
