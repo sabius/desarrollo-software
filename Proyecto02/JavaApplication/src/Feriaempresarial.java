@@ -29,7 +29,7 @@ public class Feriaempresarial {
     visitanteService.registrarVisitante("Bruce Wayne", 123456, "bruce@wayne.com");
     visitanteService.registrarVisitante("Barry Allen", 987456, "barry@allen.com");
 
-    // Usar el nuevo servicio de reportes
+    // Se utiliza el servicio de reportes para ver los resultados
     ReporteService.generarReporteFeria(empresaService, standService, visitanteService);
   }
 }
