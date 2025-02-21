@@ -1,7 +1,6 @@
 package services;
 
 import models.Stand;
-import models.Empresa;
 import enums.Ubicaciones;
 import enums.Tamanos;
 import java.util.ArrayList;
@@ -27,7 +26,7 @@ public class StandService {
         List<Stand> disponibles = new ArrayList<>();
 
         for (Stand stand : stands) {
-            if (stand.getOcupado()) {
+            if (!stand.getOcupado()) {
                 disponibles.add(stand);
             }
         }

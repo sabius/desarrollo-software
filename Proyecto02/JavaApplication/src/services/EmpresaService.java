@@ -15,18 +15,18 @@ public class EmpresaService {
     public EmpresaService() {
         this.empresas = new ArrayList<>();
     }
-    
+
     public Empresa registrarEmpresa(String nombre, Sectores sector, String email){
         Empresa empresa = new Empresa(nombre, sector, email);
         empresas.add(empresa);
         
         return empresa;
     }
-    
+
     public List<Empresa> listarEmpresas() {
         return empresas;
     }
-    
+
     public void eliminarEmpresa(String nombre) {
         empresas.removeIf(e -> e.getNombre().equalsIgnoreCase(nombre));
     }
