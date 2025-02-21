@@ -1,8 +1,5 @@
 package models;
 
-
-
-
 public class Vehiculo {
     private String placa;
     private String marca;
@@ -41,13 +38,4 @@ public class Vehiculo {
     } public void setHoraEntrada(String horaEntrada) {
         this.horaEntrada = horaEntrada;
     }
-
-    // Setters
-   
-
-  
-
- 
-
-   
 }
