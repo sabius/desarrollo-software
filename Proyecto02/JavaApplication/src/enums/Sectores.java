@@ -1,3 +1,5 @@
+package enums;
+
 public enum Sectores {
     TECNOLOGIA("Tecnología"),
     SALUD("Salud"),
