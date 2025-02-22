@@ -1,8 +1,9 @@
 import models.Vehiculo;
+import models.Camion;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        Vehiculo picanto = new Vehiculo("ABC123", "kia", "picanto", "10am" );
+        Camion frordcCamion = new Vehiculo("ABC123", "kia", "cmion", "10am" );
         Vehiculo honda = new Vehiculo( "eexx75", "honda", "k42", "1pm");
 
 
