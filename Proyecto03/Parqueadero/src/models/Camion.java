@@ -6,18 +6,18 @@ public class Camion {
         private String marca;
         private String modelo;
         private java.time.LocalDate horaEntrada;
-        private String tipoConbustible;
+        private String tipoCombustible;
         private int valorTarifa;
     
 
     // COSTRUCTOR 
 
-    public Camion (String placa, String marca, String modelo, java.time.LocalDate horaEntrada,String tipoConbustible, int valorTarifa ) {
+    public Camion (String placa, String marca, String modelo, java.time.LocalDate horaEntrada,String tipoCombustible, int valorTarifa ) {
         this.placa = placa;
         this.marca = marca;
         this.modelo = modelo;
         this.horaEntrada = horaEntrada;
-        this.tipoConbustible = tipoConbustible;
+        this.tipoCombustible = tipoCombustible;
         this.valorTarifa = valorTarifa;
     }
 
@@ -39,13 +39,10 @@ public class Camion {
         this.horaEntrada = horaEntrada;}
 
     public String  getTipoConbustible() {
-            return tipoConbustible;} public void setTipoConbustible(String  tipoConbustible) {
-            this.tipoConbustible = tipoConbustible;}
+            return tipoCombustible;} public void setTipoConbustible(String  tipoCombustible) {
+            this.tipoCombustible = tipoCombustible;}
     
     public int  getValorTarifa() {
                 return valorTarifa;} public void setValorTarifa(int valorTarifa) {
                 this.valorTarifa = valorTarifa;}
-
-
-
 }
