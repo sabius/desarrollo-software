@@ -3,14 +3,19 @@ package models;
 import enums.Ubicaciones;
 import enums.Tamanos;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 public class Stand {
+
   private int numero;
   private Ubicaciones ubicacion;
   private Tamanos tamano;
   private boolean ocupado;
+  private List<Visita> visitas; // Lista de visitas
   private Optional<String> empresa;
+  
 
   public Stand(int numero, Ubicaciones ubicacion, Tamanos tamano) {
     this.numero = numero;
@@ -18,6 +23,7 @@ public class Stand {
     this.tamano = tamano;
     this.ocupado = false;
     this.empresa = null;
+    this.visitas = new ArrayList<>(); // 🔥 Inicializar la lista aquí
   }
 
   // Getters y setters
@@ -55,4 +61,15 @@ public class Stand {
   public void setEmpresa(Optional<String> empresa) {
       this.empresa = empresa;
   }
+  
+  
+    public void registrarVisita(Visitante visitante, String comentario) {
+        Visita visita = new Visita(visitante, this, comentario);
+        visitas.add(visita);
+        System.out.println("Visita registrada: " + visita);
+    }
+
+    public List<Visita> getVisitas() {
+        return visitas;
+    }
 }
