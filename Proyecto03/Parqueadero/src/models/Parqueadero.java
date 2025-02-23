@@ -1,7 +1,5 @@
 package models;
 
-
-
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +34,7 @@ public class Parqueadero {
 
     private double calcularCosto(Vehiculo vehiculo, long horasEstadia) {
         double tarifaPorHora;
-        if (vehiculo instanceof models.Automovil) {
+        if (vehiculo instanceof Automovil) {
             tarifaPorHora = 5000; // Tarifa por hora para automóviles
         } else if (vehiculo instanceof Motocicleta) {
             tarifaPorHora = 3000; // Tarifa por hora para motocicletas
