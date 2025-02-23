@@ -2,7 +2,7 @@ import java.time.LocalDateTime;
 import java.util.Scanner;
 import models.*;
 
-public class Main {
+public class App {
     public static void main(String[] args) {
         Parqueadero parqueadero = new Parqueadero();
         boolean running = true;
