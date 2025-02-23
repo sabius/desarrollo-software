@@ -1,18 +1,20 @@
 package models;
 
-public class Camion {
-       
-        private String placa;
-        private String marca;
-        private String modelo;
-        private java.time.LocalDate horaEntrada;
-        private String tipoCombustible;
-        private int valorTarifa;
-    
 
-    // COSTRUCTOR 
 
-    public Camion (String placa, String marca, String modelo, java.time.LocalDate horaEntrada,String tipoCombustible, int valorTarifa ) {
+import java.time.LocalDateTime;
+
+public class Camion extends Vehiculo {
+    private String placa;
+    private String marca;
+    private String modelo;
+    private java.time.LocalDateTime horaEntrada;
+    private String tipoCombustible;
+    private int valorTarifa;
+
+    // Constructor
+    public Camion(String placa, String marca, String modelo, LocalDateTime horaEntrada, String tipoCombustible, int valorTarifa) {
+        super(placa, marca, modelo, horaEntrada, tipoCombustible, valorTarifa);
         this.placa = placa;
         this.marca = marca;
         this.modelo = modelo;
@@ -21,28 +23,64 @@ public class Camion {
         this.valorTarifa = valorTarifa;
     }
 
+   
+
     // Getters and setters
+    @Override
     public String getPlaca() {
-        return placa;} public void setPlaca(String placa) {
-        this.placa = placa;}
+        return placa;
+    }
 
+    @Override
+    public void setPlaca(String placa) {
+        this.placa = placa;
+    }
+
+    @Override
     public String getMarca() {
-        return marca;}  public void setMarca(String marca) {
-        this.marca = marca;}
+        return marca;
+    }
 
-    public String getModelo() {
-        return modelo;}   public void setModelo(String modelo) {
-        this.modelo = modelo; }
-
-    public java.time.LocalDate getHoraEntrada() {
-        return horaEntrada;} public void setHoraEntrada(java.time.LocalDate horaEntrada) {
-        this.horaEntrada = horaEntrada;}
-
-    public String  getTipoConbustible() {
-            return tipoCombustible;} public void setTipoConbustible(String  tipoCombustible) {
-            this.tipoCombustible = tipoCombustible;}
+    @Override
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
     
-    public int  getValorTarifa() {
-                return valorTarifa;} public void setValorTarifa(int valorTarifa) {
-                this.valorTarifa = valorTarifa;}
+    @Override
+    public String getModelo() {
+        return modelo;
+    }
+
+    @Override
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    @Override
+    public java.time.LocalDateTime getHoraEntrada() {
+        return horaEntrada;
+    }
+
+    @Override
+    public void setHoraEntrada(java.time.LocalDateTime horaEntrada) {
+        this.horaEntrada = horaEntrada;
+    }
+
+    public String getTipoCombustible() {
+        return tipoCombustible;
+    }
+
+    public void setTipoCombustible(String tipoCombustible) {
+        this.tipoCombustible = tipoCombustible;
+    }
+
+    @Override
+    public int getValorTarifa() {
+        return valorTarifa;
+    }
+
+    @Override
+    public void setValorTarifa(int valorTarifa) {
+        this.valorTarifa = valorTarifa;
+    }
 }

@@ -2,9 +2,9 @@ import models.Automovil;
 import models.Camion;
 import models.Motocicleta;
 import models.Vehiculo;
-// import models.Camion;
 
-public class App {
+
+public class INERFAS {
     public static void main(String[] args) throws Exception {
         Vehiculo picanto = new Vehiculo(
           "ABC 123",
@@ -24,11 +24,11 @@ public class App {
           5000
         );
 
-        Camion camion = new Camion(
+        Camion camion = new Camion (
           "EEX 475",
           "frod",
           "k42",
-          java.time.LocalDate.now(),
+          java.time.LocalDateTime.now(),
           "Gasolina",
           5000
         );
