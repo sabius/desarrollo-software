@@ -1,6 +1,9 @@
 package models;
 
+import models.Stand;
+
 public class Visitante {
+    
     private String nombre;
     private int identificacion;
     private String email;
@@ -12,12 +15,31 @@ public class Visitante {
     }
 
     // Getters y setters
-    public void setNombre(String nombre) { this.nombre = nombre; }
-    public String getNombre() { return this.nombre; }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
     
-    public void setIdentificacion(int identificacion) { this.identificacion = identificacion; }
-    public int getIdentificacion() { return this.identificacion; }
+    public String getNombre() {
+        return this.nombre;
+    }
+    
+    public void setIdentificacion(int identificacion) {
+        this.identificacion = identificacion;
+    }
+    
+    public int getIdentificacion() {
+        return this.identificacion;
+    }
 
-    public void setEmail(String email) { this.email = email; }
-    public String getEmail() { return this.email; }
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    
+    public String getEmail() {
+        return this.email;
+    }
+    
+    public void visitarStand(Stand stand) {
+        System.out.println(this.nombre + " visitanto stand " + stand);
+    }
 }

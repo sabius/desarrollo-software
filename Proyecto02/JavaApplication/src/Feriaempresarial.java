@@ -2,10 +2,15 @@
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
 
+import models.Visitante;
+import models.Stand;
+
 import services.EmpresaService;
 import services.StandService;
 import services.VisitanteService;
 import services.ReporteService;
+
+
 import enums.Sectores;
 public class Feriaempresarial {
   public static void main(String[] args) {
@@ -26,9 +31,15 @@ public class Feriaempresarial {
     empresaService.registrarEmpresa("Sactrom", Sectores.TECNOLOGIA, "Sactr@sactrom.com");
 
     System.out.println("\nRegistrando visitantes");
-    visitanteService.registrarVisitante("Bruce Wayne", 123456, "bruce@wayne.com");
+    Visitante visitante1 = visitanteService.registrarVisitante("Bruce Wayne", 123456, "bruce@wayne.com");
     visitanteService.registrarVisitante("Barry Allen", 987456, "barry@allen.com");
 
+    standService.asignarStand(0, "Tech Corp");
+    
+    Stand stand1 = standService.getStand(1);
+
+    stand1.registrarVisita(visitante1, "Interesado en el producto.");
+    
     // Se utiliza el servicio de reportes para ver los resultados
     ReporteService.generarReporteFeria(empresaService, standService, visitanteService);
   }

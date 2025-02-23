@@ -3,6 +3,7 @@ package services;
 import models.Empresa;
 import models.Stand;
 import models.Visitante;
+import models.Visita;
 
 import java.util.List;
 
@@ -51,6 +52,27 @@ public class ReporteService {
           " | Identificación: " + visitante.getIdentificacion() +
           " | Email: " + visitante.getEmail());
       }
+    }
+    
+        // Reporte de Visitas
+    System.out.println("\n--- Registro de Visitas ---");
+    boolean hayVisitas = false;
+    for (Stand stand : standService.listarStands()) {  // Se recorren todos los stands
+      List<Visita> visitas = stand.getVisitas();
+      if (!visitas.isEmpty()) {
+        hayVisitas = true;
+        System.out.println("\nStand " + stand.getNumero() + " - " + stand.getUbicacion().getDescripcion());
+        for (Visita visita : visitas) {
+          System.out.println(
+            "  - Visitante: " + visita.getVisitante().getNombre() +
+            " | Fecha: " + visita.getFechaHora() +
+            " | Comentario: " + visita.getComentario().orElse("Sin comentario")
+          );
+        }
+      }
+    }
+    if (!hayVisitas) {
+      System.out.println("No se han registrado visitas aún.");
     }
 
     System.out.println("\n===== FIN DEL REPORTE =====");
